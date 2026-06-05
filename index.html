@@ -1015,31 +1015,33 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 /* ──────────── SOCIALS / EPOCH IDEAS ──────────── */
 #page-socials { background:#0a0e1a; padding-top:0; }
 
-/* Outer shell: left sidebar + center feed */
+/* Outer shell: left sidebar + center feed + right panel */
 .ki-shell {
   display:grid;
-  grid-template-columns:260px 1fr;
+  grid-template-columns:260px minmax(0,640px) 1fr;
   min-height:calc(100vh - 66px);
+  max-width:1280px;
+  margin:0 auto;
 }
 
 /* ── Left sidebar ── */
 .ki-sidebar {
   border-right:1px solid #1a2540;
-  padding:28px 0;
+  padding:20px 0 28px;
   position:sticky; top:66px; height:calc(100vh - 66px); overflow-y:auto;
 }
 .ki-sidebar::-webkit-scrollbar { width:2px; }
 .ki-sidebar::-webkit-scrollbar-thumb { background:#1a2540; }
 
 .ki-nav-section {
-  font-size:9px; letter-spacing:2.5px; text-transform:uppercase;
-  color:#3D4A5C; padding:0 20px; margin:20px 0 8px;
+  font-size:8.5px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#3D4A5C; padding:0 22px; margin:24px 0 6px;
 }
 .ki-nav-item {
-  display:flex; align-items:center; gap:10px;
-  padding:9px 20px; font-size:13px; color:#7A8699;
+  display:flex; align-items:center; gap:11px;
+  padding:11px 22px; font-size:13px; color:#7A8699;
   cursor:pointer; transition:all .12s; border-left:2.5px solid transparent;
-  font-weight:500;
+  font-weight:500; letter-spacing:.1px;
 }
 .ki-nav-item:hover { color:#C8D4E8; background:rgba(255,255,255,.03); }
 .ki-nav-item.active { color:#00E5C0; border-left-color:#00E5C0; background:rgba(0,229,192,.05); }
@@ -1051,13 +1053,13 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 
 /* Trending markets in sidebar */
 .ki-trend-card {
-  margin:6px 12px; padding:12px 14px;
+  margin:5px 14px; padding:13px 14px;
   background:#0d1525; border:1px solid #1a2540;
   border-radius:10px; cursor:pointer; transition:border-color .15s;
 }
 .ki-trend-card:hover { border-color:rgba(0,229,192,.25); }
-.ki-trend-tag { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#00E5C0; margin-bottom:4px; }
-.ki-trend-title { font-size:12px; font-weight:600; color:#C8D4E8; line-height:1.35; margin-bottom:6px; }
+.ki-trend-tag { font-size:8.5px; letter-spacing:1.5px; text-transform:uppercase; color:#00E5C0; margin-bottom:5px; }
+.ki-trend-title { font-size:12px; font-weight:600; color:#C8D4E8; line-height:1.4; margin-bottom:8px; }
 .ki-trend-bar-wrap { display:flex; align-items:center; gap:8px; }
 .ki-trend-yes { font-size:11px; font-weight:700; color:#00E5C0; font-family:'Space Mono',monospace; }
 .ki-trend-bar { flex:1; height:3px; background:#1a2540; border-radius:2px; overflow:hidden; }
@@ -1188,19 +1190,13 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ki-mkt-category { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#7A8699; margin-bottom:4px; }
 .ki-mkt-title { font-size:16px; font-weight:700; color:#FFFFFF; line-height:1.3; }
 
-/* YES/NO row — the Kalshi signature element */
-.ki-mkt-yesno { display:flex; gap:0; padding:12px 16px 0; }
-.ki-mkt-yes-btn, .ki-mkt-no-btn {
-  flex:1; padding:9px 0; text-align:center;
-  font-size:13px; font-weight:700; font-family:'DM Sans',sans-serif;
-  border:none; cursor:pointer; transition:opacity .15s; border-radius:0;
-}
-.ki-mkt-yes-btn { background:rgba(0,229,192,.15); color:#00E5C0; border-radius:8px 0 0 8px; }
-.ki-mkt-no-btn  { background:rgba(239,68,68,.12);  color:#EF4444;  border-radius:0 8px 8px 0; }
-.ki-mkt-yes-btn:hover { background:rgba(0,229,192,.25); }
-.ki-mkt-no-btn:hover  { background:rgba(239,68,68,.22); }
-.ki-mkt-yes-pct, .ki-mkt-no-pct { display:block; font-size:18px; font-family:'Space Mono',monospace; }
-.ki-mkt-yes-label, .ki-mkt-no-label { display:block; font-size:9px; letter-spacing:1.5px; opacity:.7; margin-top:1px; }
+/* Prediction probability bar — replaces YES/NO buttons */
+.ki-mkt-prob { padding:10px 16px 0; }
+.ki-mkt-prob-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.ki-mkt-prob-pct { font-family:'Space Mono',monospace; font-size:22px; font-weight:700; color:#00E5C0; line-height:1; }
+.ki-mkt-prob-label { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#7A8699; margin-top:2px; }
+.ki-mkt-prob-bar { height:5px; background:#1E2D42; border-radius:3px; overflow:hidden; margin-bottom:2px; }
+.ki-mkt-prob-fill { height:100%; background:linear-gradient(90deg,#00E5C0,#00b89a); border-radius:3px; transition:width .5s; }
 
 /* Chart / progress bar row */
 .ki-mkt-bar-row { display:flex; align-items:center; gap:10px; padding:10px 16px 14px; }
@@ -1279,11 +1275,58 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ki-lb img { max-width:90vw; max-height:90vh; border-radius:8px; object-fit:contain; }
 .ki-lb-x { position:absolute; top:16px; right:20px; background:rgba(255,255,255,.1); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 
+/* ── Right panel ── */
+.ki-right-panel {
+  padding:24px 20px;
+  position:sticky; top:66px; height:calc(100vh - 66px); overflow-y:auto;
+}
+.ki-right-panel::-webkit-scrollbar { width:2px; }
+.ki-right-panel::-webkit-scrollbar-thumb { background:#1a2540; }
+
+.ki-rp-section {
+  font-size:8.5px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#3D4A5C; margin:0 0 14px;
+}
+
+.ki-follow-card {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 0; border-bottom:1px solid #1a2540;
+}
+.ki-follow-card:last-of-type { border-bottom:none; }
+.ki-follow-av {
+  width:34px; height:34px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700;
+}
+.ki-follow-info { flex:1; min-width:0; }
+.ki-follow-name { font-size:13px; font-weight:700; color:#C8D4E8; line-height:1.2; }
+.ki-follow-handle { font-size:10px; color:#7A8699; margin-top:2px; }
+.ki-follow-btn {
+  background:transparent; border:1px solid #2A3A55; color:#C8D4E8;
+  border-radius:20px; padding:5px 14px; font-size:11px; font-weight:600;
+  cursor:pointer; font-family:'DM Sans',sans-serif; transition:all .15s;
+  flex-shrink:0;
+}
+.ki-follow-btn:hover { border-color:#00E5C0; color:#00E5C0; }
+
+.ki-rp-stat-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
+  background:#1a2540; border:1px solid #1a2540; border-radius:8px; overflow:hidden;
+}
+.ki-rp-stat { background:#0d1525; padding:14px 12px; }
+.ki-rp-stat-v { font-family:'Space Mono',monospace; font-size:17px; color:#00E5C0; line-height:1; margin-bottom:4px; }
+.ki-rp-stat-l { font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#3D4A5C; }
+
 /* Responsive */
+@media (max-width:1100px) {
+  .ki-shell { grid-template-columns:260px minmax(0,640px); }
+  .ki-right-panel { display:none; }
+}
 @media (max-width:900px) {
-  .ki-shell { grid-template-columns:1fr; }
+  .ki-shell { grid-template-columns:1fr; max-width:100%; }
   .ki-sidebar { display:none; }
   .ki-feed-col { max-width:100%; border-right:none; }
+  .ki-right-panel { display:none; }
 }
 
 </style>
@@ -4406,15 +4449,10 @@ function _kMakePost(p){
     var mi = document.createElement('div'); mi.className = 'ki-mkt-info';
     mi.innerHTML = '<div class="ki-mkt-category">'+p.mkt.cat+'</div><div class="ki-mkt-title">'+p.mkt.pool+'</div>';
     mh.appendChild(mico); mh.appendChild(mi); mc.appendChild(mh);
-    // YES / NO buttons
-    var yn = document.createElement('div'); yn.className = 'ki-mkt-yesno';
-    var yb = document.createElement('button'); yb.className = 'ki-mkt-yes-btn';
-    yb.innerHTML = '<span class="ki-mkt-yes-pct">'+p.mkt.yes+'%</span><span class="ki-mkt-yes-label">YES</span>';
-    yb.addEventListener('click', function(e){ e.stopPropagation(); showToast('Prediction attached: Yes'); });
-    var nb = document.createElement('button'); nb.className = 'ki-mkt-no-btn';
-    nb.innerHTML = '<span class="ki-mkt-no-pct">'+(100-p.mkt.yes)+'%</span><span class="ki-mkt-no-label">NO</span>';
-    nb.addEventListener('click', function(e){ e.stopPropagation(); showToast('Prediction attached: No'); });
-    yn.appendChild(yb); yn.appendChild(nb); mc.appendChild(yn);
+    // Probability bar (replaces YES/NO)
+    var prob = document.createElement('div'); prob.className = 'ki-mkt-prob';
+    prob.innerHTML = '<div class="ki-mkt-prob-row"><div><div class="ki-mkt-prob-pct">'+p.mkt.yes+'%</div><div class="ki-mkt-prob-label">Consensus Likelihood</div></div></div><div class="ki-mkt-prob-bar"><div class="ki-mkt-prob-fill" style="width:'+p.mkt.yes+'%"></div></div>';
+    mc.appendChild(prob);
     // Stats bar
     var br = document.createElement('div'); br.className = 'ki-mkt-bar-row';
     var bar = document.createElement('div'); bar.className = 'ki-mkt-bar';
@@ -4640,6 +4678,43 @@ function initSocials(){if(_KInit)return;_KInit=true;kiRenderFeed();}
     <div id="kiFeed"></div>
 
   </div>
+
+  <!-- RIGHT PANEL -->
+  <aside class="ki-right-panel">
+    <div class="ki-rp-section">WHO TO FOLLOW</div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(0,229,192,.15);color:#00E5C0;border:1.5px solid #00E5C0">CC</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">CryptoChad</div>
+        <div class="ki-follow-handle">@chadcrypto · <span style="color:#00E5C0">94% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following CryptoChad')">Follow</button>
+    </div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(26,110,255,.15);color:#1A6EFF;border:1.5px solid #1A6EFF">MT</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">MarketTitan</div>
+        <div class="ki-follow-handle">@markettitan · <span style="color:#00E5C0">88% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following MarketTitan')">Follow</button>
+    </div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(255,200,0,.1);color:#ffc800;border:1.5px solid #ffc800">SS</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">StargazerSam</div>
+        <div class="ki-follow-handle">@stargazer · <span style="color:#00E5C0">81% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following StargazerSam')">Follow</button>
+    </div>
+
+    <div class="ki-rp-section" style="margin-top:28px">YOUR STATS</div>
+    <div class="ki-rp-stat-grid">
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">3</div><div class="ki-rp-stat-l">Active Entries</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">2</div><div class="ki-rp-stat-l">Pools Joined</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">32</div><div class="ki-rp-stat-l">GDX Tokens</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">#412</div><div class="ki-rp-stat-l">Global Rank</div></div>
+    </div>
+  </aside>
 </div>
 
 <!-- FAB -->

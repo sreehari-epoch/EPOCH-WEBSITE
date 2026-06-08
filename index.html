@@ -18,7 +18,7 @@
   --tg2:      rgba(0,229,192,0.06);
   --blue:     #1A6EFF;
   --white:    #ffffff;
-  --muted:    rgba(255,255,255,0.42);
+  --muted:    rgba(255,255,255,0.72);
   --bdr:      rgba(255,255,255,0.07);
   --bdt:      rgba(0,229,192,0.22);
   --card:     rgba(255,255,255,0.03);
@@ -89,7 +89,7 @@ nav {
 }
 .logo { display: flex; align-items: center; gap: 12px; cursor: pointer; }
 .logo-icon {
-  width: 34px; height: 34px;
+  width: 42px; height: 42px;
   border: 1.5px solid var(--teal); border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
   position: relative;
@@ -97,8 +97,8 @@ nav {
 }
 .logo-icon::before { content:''; position:absolute; width:13px; height:1.5px; background:var(--teal); transform:rotate(45deg); }
 .logo-icon::after  { content:''; position:absolute; width:6px;  height:6px;  border:1.5px solid var(--teal); border-radius:50%; background:var(--bg); }
-.logo-text { font-family:var(--fd); font-size:19px; letter-spacing:3px; }
-.logo-sub  { font-family:var(--fm); font-size:6.5px; color:var(--teal); letter-spacing:2px; }
+.logo-text { font-family:var(--fd); font-size:24px; letter-spacing:3px; }
+.logo-sub  { font-family:var(--fm); font-size:8px; color:var(--teal); letter-spacing:2px; }
 
 .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
 .nav-links a {
@@ -312,8 +312,8 @@ nav {
   position: relative;
 }
 .ec-lbl { font-family:var(--fm); font-size:9px; letter-spacing:3px; color:var(--muted); text-transform:uppercase; margin-bottom:4px; }
-.ec-nm  { font-family:var(--fd); font-size:28px; letter-spacing:1px; margin-bottom:6px; text-align:center; min-height:58px; line-height:1.1; padding:0 8px; color:var(--white); }
-.ec-dur { font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.35); text-align:center; margin-top:4px; margin-bottom:28px; }
+.ec-nm  { font-family:var(--fd); font-size:42px; letter-spacing:1px; margin-bottom:6px; text-align:center; min-height:72px; line-height:1.1; padding:0 8px; color:var(--white); }
+.ec-dur { font-family:var(--fm); font-size:10px; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.65); text-align:center; margin-top:4px; margin-bottom:28px; }
 
 /* clock wheel — bigger */
 .clock-wrap { position:relative; width:420px; height:420px; flex-shrink:0; }
@@ -530,7 +530,7 @@ nav {
 .step-n   { font-family:var(--fd); font-size:100px; color:rgba(0,229,192,.04); position:absolute; top:-12px; right:14px; line-height:1; pointer-events:none; }
 .step-ico { width:40px; height:40px; border:1px solid var(--bdt); border-radius:50%; display:flex; align-items:center; justify-content:center; margin-bottom:20px; color:var(--teal); font-size:16px; }
 .step-t   { font-family:var(--fd); font-size:22px; letter-spacing:1px; margin-bottom:10px; }
-.step-d   { font-size:13px; line-height:1.72; color:rgba(255,255,255,.48); }
+.step-d   { font-size:13px; line-height:1.72; color:rgba(255,255,255,.75); }
 
 /* ─────────────────────────────────────
    FOOTER
@@ -788,6 +788,11 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .sub-plan-name{font-family:var(--fm);font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:6px;}
 .sub-plan-price{font-family:var(--fd);font-size:28px;letter-spacing:2px;}
 .sub-plan-price span{font-size:13px;color:rgba(255,255,255,.5);font-family:var(--fm);}
+.sub-kyc-wrap { margin-top:14px; }
+.sub-kyc-label { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:6px; font-family:var(--fm); }
+.sub-kyc-upload { display:block; padding:11px 16px; background:rgba(255,255,255,.04); border:1px dashed rgba(255,255,255,.18); border-radius:8px; cursor:pointer; font-family:var(--fm); font-size:12px; color:rgba(255,255,255,.6); text-align:center; transition:border-color .15s; }
+.sub-kyc-upload:hover { border-color:var(--teal); color:var(--teal); }
+.sub-kyc-hint { font-size:9px; color:rgba(255,255,255,.32); margin-top:5px; text-align:center; font-family:var(--fm); }
 .sub-form{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
 .sub-input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;color:#fff;font-family:var(--fm);font-size:13px;outline:none;transition:border-color .2s;}
 .sub-input:focus{border-color:var(--teal);}
@@ -1015,33 +1020,31 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 /* ──────────── SOCIALS / EPOCH IDEAS ──────────── */
 #page-socials { background:#0a0e1a; padding-top:0; }
 
-/* Outer shell: left sidebar + center feed + right panel */
+/* Outer shell: left sidebar + center feed */
 .ki-shell {
   display:grid;
-  grid-template-columns:260px minmax(0,640px) 1fr;
+  grid-template-columns:260px 1fr;
   min-height:calc(100vh - 66px);
-  max-width:1280px;
-  margin:0 auto;
 }
 
 /* ── Left sidebar ── */
 .ki-sidebar {
   border-right:1px solid #1a2540;
-  padding:20px 0 28px;
+  padding:28px 0;
   position:sticky; top:66px; height:calc(100vh - 66px); overflow-y:auto;
 }
 .ki-sidebar::-webkit-scrollbar { width:2px; }
 .ki-sidebar::-webkit-scrollbar-thumb { background:#1a2540; }
 
 .ki-nav-section {
-  font-size:8.5px; letter-spacing:2.5px; text-transform:uppercase;
-  color:#3D4A5C; padding:0 22px; margin:24px 0 6px;
+  font-size:9px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#3D4A5C; padding:0 20px; margin:20px 0 8px;
 }
 .ki-nav-item {
-  display:flex; align-items:center; gap:11px;
-  padding:11px 22px; font-size:13px; color:#7A8699;
+  display:flex; align-items:center; gap:10px;
+  padding:9px 20px; font-size:13px; color:#7A8699;
   cursor:pointer; transition:all .12s; border-left:2.5px solid transparent;
-  font-weight:500; letter-spacing:.1px;
+  font-weight:500;
 }
 .ki-nav-item:hover { color:#C8D4E8; background:rgba(255,255,255,.03); }
 .ki-nav-item.active { color:#00E5C0; border-left-color:#00E5C0; background:rgba(0,229,192,.05); }
@@ -1053,13 +1056,13 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 
 /* Trending markets in sidebar */
 .ki-trend-card {
-  margin:5px 14px; padding:13px 14px;
+  margin:6px 12px; padding:12px 14px;
   background:#0d1525; border:1px solid #1a2540;
   border-radius:10px; cursor:pointer; transition:border-color .15s;
 }
 .ki-trend-card:hover { border-color:rgba(0,229,192,.25); }
-.ki-trend-tag { font-size:8.5px; letter-spacing:1.5px; text-transform:uppercase; color:#00E5C0; margin-bottom:5px; }
-.ki-trend-title { font-size:12px; font-weight:600; color:#C8D4E8; line-height:1.4; margin-bottom:8px; }
+.ki-trend-tag { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#00E5C0; margin-bottom:4px; }
+.ki-trend-title { font-size:12px; font-weight:600; color:#C8D4E8; line-height:1.35; margin-bottom:6px; }
 .ki-trend-bar-wrap { display:flex; align-items:center; gap:8px; }
 .ki-trend-yes { font-size:11px; font-weight:700; color:#00E5C0; font-family:'Space Mono',monospace; }
 .ki-trend-bar { flex:1; height:3px; background:#1a2540; border-radius:2px; overflow:hidden; }
@@ -1190,13 +1193,19 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ki-mkt-category { font-size:9px; letter-spacing:2px; text-transform:uppercase; color:#7A8699; margin-bottom:4px; }
 .ki-mkt-title { font-size:16px; font-weight:700; color:#FFFFFF; line-height:1.3; }
 
-/* Prediction probability bar — replaces YES/NO buttons */
-.ki-mkt-prob { padding:10px 16px 0; }
-.ki-mkt-prob-row { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
-.ki-mkt-prob-pct { font-family:'Space Mono',monospace; font-size:22px; font-weight:700; color:#00E5C0; line-height:1; }
-.ki-mkt-prob-label { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:#7A8699; margin-top:2px; }
-.ki-mkt-prob-bar { height:5px; background:#1E2D42; border-radius:3px; overflow:hidden; margin-bottom:2px; }
-.ki-mkt-prob-fill { height:100%; background:linear-gradient(90deg,#00E5C0,#00b89a); border-radius:3px; transition:width .5s; }
+/* YES/NO row — the Kalshi signature element */
+.ki-mkt-yesno { display:flex; gap:0; padding:12px 16px 0; }
+.ki-mkt-yes-btn, .ki-mkt-no-btn {
+  flex:1; padding:9px 0; text-align:center;
+  font-size:13px; font-weight:700; font-family:'DM Sans',sans-serif;
+  border:none; cursor:pointer; transition:opacity .15s; border-radius:0;
+}
+.ki-mkt-yes-btn { background:rgba(0,229,192,.15); color:#00E5C0; border-radius:8px 0 0 8px; }
+.ki-mkt-no-btn  { background:rgba(239,68,68,.12);  color:#EF4444;  border-radius:0 8px 8px 0; }
+.ki-mkt-yes-btn:hover { background:rgba(0,229,192,.25); }
+.ki-mkt-no-btn:hover  { background:rgba(239,68,68,.22); }
+.ki-mkt-yes-pct, .ki-mkt-no-pct { display:block; font-size:18px; font-family:'Space Mono',monospace; }
+.ki-mkt-yes-label, .ki-mkt-no-label { display:block; font-size:9px; letter-spacing:1.5px; opacity:.7; margin-top:1px; }
 
 /* Chart / progress bar row */
 .ki-mkt-bar-row { display:flex; align-items:center; gap:10px; padding:10px 16px 14px; }
@@ -1275,58 +1284,11 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ki-lb img { max-width:90vw; max-height:90vh; border-radius:8px; object-fit:contain; }
 .ki-lb-x { position:absolute; top:16px; right:20px; background:rgba(255,255,255,.1); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 
-/* ── Right panel ── */
-.ki-right-panel {
-  padding:24px 20px;
-  position:sticky; top:66px; height:calc(100vh - 66px); overflow-y:auto;
-}
-.ki-right-panel::-webkit-scrollbar { width:2px; }
-.ki-right-panel::-webkit-scrollbar-thumb { background:#1a2540; }
-
-.ki-rp-section {
-  font-size:8.5px; letter-spacing:2.5px; text-transform:uppercase;
-  color:#3D4A5C; margin:0 0 14px;
-}
-
-.ki-follow-card {
-  display:flex; align-items:center; gap:10px;
-  padding:10px 0; border-bottom:1px solid #1a2540;
-}
-.ki-follow-card:last-of-type { border-bottom:none; }
-.ki-follow-av {
-  width:34px; height:34px; border-radius:50%; flex-shrink:0;
-  display:flex; align-items:center; justify-content:center;
-  font-size:11px; font-weight:700;
-}
-.ki-follow-info { flex:1; min-width:0; }
-.ki-follow-name { font-size:13px; font-weight:700; color:#C8D4E8; line-height:1.2; }
-.ki-follow-handle { font-size:10px; color:#7A8699; margin-top:2px; }
-.ki-follow-btn {
-  background:transparent; border:1px solid #2A3A55; color:#C8D4E8;
-  border-radius:20px; padding:5px 14px; font-size:11px; font-weight:600;
-  cursor:pointer; font-family:'DM Sans',sans-serif; transition:all .15s;
-  flex-shrink:0;
-}
-.ki-follow-btn:hover { border-color:#00E5C0; color:#00E5C0; }
-
-.ki-rp-stat-grid {
-  display:grid; grid-template-columns:1fr 1fr; gap:1px;
-  background:#1a2540; border:1px solid #1a2540; border-radius:8px; overflow:hidden;
-}
-.ki-rp-stat { background:#0d1525; padding:14px 12px; }
-.ki-rp-stat-v { font-family:'Space Mono',monospace; font-size:17px; color:#00E5C0; line-height:1; margin-bottom:4px; }
-.ki-rp-stat-l { font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#3D4A5C; }
-
 /* Responsive */
-@media (max-width:1100px) {
-  .ki-shell { grid-template-columns:260px minmax(0,640px); }
-  .ki-right-panel { display:none; }
-}
 @media (max-width:900px) {
-  .ki-shell { grid-template-columns:1fr; max-width:100%; }
+  .ki-shell { grid-template-columns:1fr; }
   .ki-sidebar { display:none; }
   .ki-feed-col { max-width:100%; border-right:none; }
-  .ki-right-panel { display:none; }
 }
 
 </style>
@@ -1361,37 +1323,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 ═══════════════════════════════════ -->
 <div id="page-home" class="page active">
 
-  <!-- Hero -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-grid"></div>
-
-    <div class="hero-inner-wrap">
-      <!-- Heading -->
-      <div class="hero-heading-row">
-        <span class="hero-heading-line"></span>
-        <span class="hero-heading-text">The Premier Date-Based <span>Prediction Platform</span></span>
-      </div>
-
-      <!-- 9 pool cards — 3x3 grid, colour gradient shows prize intensity, live ticker -->
-      <div class="hero-cards-row" id="heroCards">
-      </div><!-- /hero-cards-row -->
-    </div><!-- /hero-inner-wrap -->
-  </section>
-
   <!-- Marquee -->
-  <div class="mq-wrap"><div class="mq" id="mq"></div></div>
-
-  <!-- Stats -->
-  <div class="stats-s anim-up-3">
-    <div class="stats-g">
-      <div class="s-card"><div class="s-num">$3.46M</div><div class="s-label">Total Prize Pool Live</div></div>
-      <div class="s-card"><div class="s-num">84K</div><div class="s-label">Active Predictors</div></div>
-      <div class="s-card"><div class="s-num">6</div><div class="s-label">Event Categories</div></div>
-      <div class="s-card"><div class="s-num">$10</div><div class="s-label">Flat Entry Fee</div></div>
-    </div>
-  </div>
-
   <!-- How It Works -->
   <div class="steps-s">
     <div class="sec-tag">How It Works</div>
@@ -1415,6 +1347,36 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
         <div class="step-t">CLAIM YOUR JACKPOT</div>
         <p class="step-d">Closest prediction wins the jackpot. Proximity tiers reward near-winners. GDX Token carry ensures no one leaves empty-handed.</p>
       </div>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+
+    <div class="hero-inner-wrap">
+      <!-- Heading -->
+      <div class="hero-heading-row">
+        <span class="hero-heading-line"></span>
+        <span class="hero-heading-text">The Premier Date-Based <span>Prediction Platform</span></span>
+      </div>
+
+      <!-- 9 pool cards — 3x3 grid, colour gradient shows prize intensity, live ticker -->
+      <div class="hero-cards-row" id="heroCards">
+      </div><!-- /hero-cards-row -->
+    </div><!-- /hero-inner-wrap -->
+  </section>
+
+  <div class="mq-wrap"><div class="mq" id="mq"></div></div>
+
+  <!-- Stats -->
+  <div class="stats-s anim-up-3">
+    <div class="stats-g">
+      <div class="s-card"><div class="s-num">$3.46M</div><div class="s-label">Total Prize Pool Live</div></div>
+      <div class="s-card"><div class="s-num">84K</div><div class="s-label">Active Predictors</div></div>
+      <div class="s-card"><div class="s-num">6</div><div class="s-label">Event Categories</div></div>
+      <div class="s-card"><div class="s-num">$10</div><div class="s-label">Flat Entry Fee</div></div>
     </div>
   </div>
 
@@ -1455,22 +1417,22 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
               <!-- Row 1: full width -->
               <polygon points="0,0 196,0 180,37 16,37"   fill="rgba(0,160,120,0.35)"/>
               <line x1="16" y1="37" x2="180" y2="37" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
-              <text x="14"  y="22" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.5)">1st</text>
-              <text x="182" y="22" font-family="'Bebas Neue',sans-serif" font-size="16" fill="white" text-anchor="end">$1,000,000</text>
+              <text x="98"  y="19" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle">1ST PLACE</text>
+              <text x="98"  y="33" font-family="'Bebas Neue',sans-serif" font-size="15" fill="white" text-anchor="middle">$1,000,000</text>
               <!-- Row 2 -->
               <polygon points="16,37 180,37 164,74 32,74" fill="rgba(0,140,105,0.28)"/>
               <line x1="32" y1="74" x2="164" y2="74" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
-              <text x="30"  y="59" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.5)">Tier 1</text>
-              <text x="166" y="59" font-family="'Bebas Neue',sans-serif" font-size="16" fill="white" text-anchor="end">$100K</text>
+              <text x="98"  y="53" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle">TIER 1</text>
+              <text x="98"  y="67" font-family="'Bebas Neue',sans-serif" font-size="14" fill="white" text-anchor="middle">$250,000</text>
               <!-- Row 3 -->
               <polygon points="32,74 164,74 148,111 48,111" fill="rgba(0,120,90,0.22)"/>
               <line x1="48" y1="111" x2="148" y2="111" stroke="rgba(0,0,0,0.4)" stroke-width="1"/>
-              <text x="46"  y="96"  font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.5)">Tier 2</text>
-              <text x="150" y="96"  font-family="'Bebas Neue',sans-serif" font-size="16" fill="white" text-anchor="end">$10K</text>
+              <text x="98"  y="90"  font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle">TIER 2</text>
+              <text x="98"  y="104" font-family="'Bebas Neue',sans-serif" font-size="13" fill="white" text-anchor="middle">$50,000</text>
               <!-- Row 4: narrowest -->
               <polygon points="48,111 148,111 132,148 64,148" fill="rgba(0,100,75,0.16)"/>
-              <text x="62"  y="133" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.5)">Tier 3</text>
-              <text x="134" y="133" font-family="'Bebas Neue',sans-serif" font-size="16" fill="white" text-anchor="end">$1K</text>
+              <text x="98"  y="127" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,0.55)" text-anchor="middle">TIER 3</text>
+              <text x="98"  y="141" font-family="'Bebas Neue',sans-serif" font-size="12" fill="white" text-anchor="middle">$10,000</text>
               <!-- outer border -->
               <polygon points="0,0 196,0 132,148 64,148" fill="none" stroke="rgba(0,229,192,0.25)" stroke-width="1"/>
               <line x1="0" y1="0" x2="196" y2="0" stroke="rgba(0,229,192,0.4)" stroke-width="1"/>
@@ -2893,19 +2855,19 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
           <div style="font-family:var(--fm);font-size:7.5px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Tier 1</div>
           <div style="font-family:var(--fd);font-size:28px;color:var(--white);line-height:1;margin-bottom:4px;">±3 days</div>
           <div style="font-family:var(--fm);font-size:8px;color:var(--muted);">Within 3 days of event</div>
-          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$100,000</div>
+          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$250,000</div>
         </div>
         <div style="text-align:center;background:rgba(0,120,90,0.06);border:1px solid rgba(0,229,192,.09);border-radius:8px;padding:18px 10px;">
           <div style="font-family:var(--fm);font-size:7.5px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Tier 2</div>
           <div style="font-family:var(--fd);font-size:28px;color:var(--white);line-height:1;margin-bottom:4px;">±7 days</div>
           <div style="font-family:var(--fm);font-size:8px;color:var(--muted);">Within ±7 days of event</div>
-          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$10,000</div>
+          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$50,000</div>
         </div>
         <div style="text-align:center;background:rgba(0,100,75,0.05);border:1px solid rgba(0,229,192,.06);border-radius:8px;padding:18px 10px;">
           <div style="font-family:var(--fm);font-size:7.5px;color:var(--teal);letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;">Tier 3</div>
           <div style="font-family:var(--fd);font-size:28px;color:var(--white);line-height:1;margin-bottom:4px;">±14 days</div>
           <div style="font-family:var(--fm);font-size:8px;color:var(--muted);">Within ±14 days of event</div>
-          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$1,000</div>
+          <div style="font-family:var(--fd);font-size:18px;color:var(--teal);margin-top:8px;">$10,000</div>
         </div>
       </div>
     </div>
@@ -2963,12 +2925,12 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
       <div class="sub-plan-cards">
         <div class="sub-plan selected" onclick="selectPlan(this,'monthly')">
           <div class="sub-plan-name">Monthly</div>
-          <div class="sub-plan-price">$9<span>/mo</span></div>
+          <div class="sub-plan-price">$20<span>/mo</span></div>
         </div>
         <div class="sub-plan" onclick="selectPlan(this,'annual')">
           <div class="sub-plan-badge">BEST VALUE</div>
           <div class="sub-plan-name">Annual</div>
-          <div class="sub-plan-price">$89<span>/yr</span></div>
+          <div class="sub-plan-price">$200<span>/yr</span></div>
         </div>
       </div>
       <div class="sub-form">
@@ -2976,6 +2938,14 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
         <input class="sub-input" type="email" id="subEmail" placeholder="Email Address" />
         <input class="sub-input" type="text" id="subCountry" placeholder="Country" />
         <label class="sub-check-label"><input type="checkbox" id="subOver18" /> I confirm I am 18 years or older</label>
+        <div class="sub-kyc-wrap">
+          <div class="sub-kyc-label">Identity Verification (KYC)</div>
+          <label class="sub-kyc-upload" for="subKycFile">
+            <span id="subKycLabel">📎 Upload Government-Issued ID</span>
+            <input type="file" id="subKycFile" accept="image/*,.pdf" style="display:none" onchange="var f=this.files[0];document.getElementById('subKycLabel').textContent=f?'✓ '+f.name:'📎 Upload Government-Issued ID'" />
+          </label>
+          <div class="sub-kyc-hint">Passport, driver's licence, or national ID · Required for payouts</div>
+        </div>
       </div>
       <button class="sub-btn" onclick="goToPayment('sub')">Continue to Payment →</button>
     </div>
@@ -2983,7 +2953,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
     <!-- Payment Step -->
     <div id="subStep2" class="sub-step">
       <button class="sub-back" onclick="backToStep1()">← Back</button>
-      <div id="payOrderLabel" class="pay-order-label">Subscribe — $9/month</div>
+      <div id="payOrderLabel" class="pay-order-label">Subscribe — $20/month</div>
       <div class="pay-card-preview">
         <div class="pay-chip"></div>
         <div class="pay-card-num" id="payCardPreview">•••• •••• •••• ••••</div>
@@ -3754,7 +3724,7 @@ function confirmEntry(prefix) {
   buildSlots(prefix);
   updateConfBtn(prefix);
   addMyPred(s.pool.name, dateStr);
-  showToast(`✓ Entry confirmed: ${dateStr} — $10 lodged!`);
+  showCertificate(prefix, s.pool.name, dateStr, s.pool.js);
 }
 
 /* ─────────────────────────────────────
@@ -3956,10 +3926,10 @@ function buildHeroCards() {
             <polygon points="14,24 186,24 172,46 28,46" fill="${p.color}" fill-opacity=".3"/>
             <polygon points="28,48 172,48 156,68 44,68" fill="${p.color}" fill-opacity=".16"/>
             <polygon points="44,70 156,70 140,90 60,90" fill="${p.color}" fill-opacity=".08"/>
-            <text x="8"  y="15" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.85)">$1,000,000</text>
-            <text x="22" y="38" font-family="'Space Mono',monospace" font-size="7.5" fill="rgba(255,255,255,.6)">$100,000</text>
-            <text x="36" y="60" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.4)">$10,000</text>
-            <text x="52" y="83" font-family="'Space Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.25)">$1,000</text>
+            <text x="100" y="15" font-family="'Space Mono',monospace" font-size="8" fill="rgba(255,255,255,.85)" text-anchor="middle">$1,000,000</text>
+            <text x="100" y="38" font-family="'Space Mono',monospace" font-size="7.5" fill="rgba(255,255,255,.6)" text-anchor="middle">$250,000</text>
+            <text x="100" y="60" font-family="'Space Mono',monospace" font-size="7" fill="rgba(255,255,255,.4)" text-anchor="middle">$50,000</text>
+            <text x="100" y="83" font-family="'Space Mono',monospace" font-size="6.5" fill="rgba(255,255,255,.25)" text-anchor="middle">$10,000</text>
           </svg>
         </div>
       </div>`;
@@ -4449,10 +4419,15 @@ function _kMakePost(p){
     var mi = document.createElement('div'); mi.className = 'ki-mkt-info';
     mi.innerHTML = '<div class="ki-mkt-category">'+p.mkt.cat+'</div><div class="ki-mkt-title">'+p.mkt.pool+'</div>';
     mh.appendChild(mico); mh.appendChild(mi); mc.appendChild(mh);
-    // Probability bar (replaces YES/NO)
-    var prob = document.createElement('div'); prob.className = 'ki-mkt-prob';
-    prob.innerHTML = '<div class="ki-mkt-prob-row"><div><div class="ki-mkt-prob-pct">'+p.mkt.yes+'%</div><div class="ki-mkt-prob-label">Consensus Likelihood</div></div></div><div class="ki-mkt-prob-bar"><div class="ki-mkt-prob-fill" style="width:'+p.mkt.yes+'%"></div></div>';
-    mc.appendChild(prob);
+    // YES / NO buttons
+    var yn = document.createElement('div'); yn.className = 'ki-mkt-yesno';
+    var yb = document.createElement('button'); yb.className = 'ki-mkt-yes-btn';
+    yb.innerHTML = '<span class="ki-mkt-yes-pct">'+p.mkt.yes+'%</span><span class="ki-mkt-yes-label">YES</span>';
+    yb.addEventListener('click', function(e){ e.stopPropagation(); showToast('Prediction attached: Yes'); });
+    var nb = document.createElement('button'); nb.className = 'ki-mkt-no-btn';
+    nb.innerHTML = '<span class="ki-mkt-no-pct">'+(100-p.mkt.yes)+'%</span><span class="ki-mkt-no-label">NO</span>';
+    nb.addEventListener('click', function(e){ e.stopPropagation(); showToast('Prediction attached: No'); });
+    yn.appendChild(yb); yn.appendChild(nb); mc.appendChild(yn);
     // Stats bar
     var br = document.createElement('div'); br.className = 'ki-mkt-bar-row';
     var bar = document.createElement('div'); bar.className = 'ki-mkt-bar';
@@ -4586,6 +4561,33 @@ function kiOpenLb(src){var lb=document.getElementById('kiLb');var img=document.g
 function kiCloseLb(e){if(e&&e.target!==document.getElementById('kiLb'))return;var lb=document.getElementById('kiLb');if(lb)lb.classList.remove('open');}
 function initSocials(){if(_KInit)return;_KInit=true;kiRenderFeed();}
 
+
+/* ── PREDICTION CERTIFICATE ── */
+function showCertificate(prefix, poolName, dateStr, prizeStr) {
+  document.getElementById('certDate').textContent  = dateStr;
+  document.getElementById('certPool').textContent  = poolName;
+  document.getElementById('certPrize').textContent = prizeStr || '—';
+  document.getElementById('certRef').textContent   = '#GDX' + (Math.floor(Math.random()*90000)+10000);
+  document.getElementById('certModal').style.display = 'flex';
+}
+function closeCert() {
+  document.getElementById('certModal').style.display = 'none';
+  showToast('Prediction locked. Good luck!');
+}
+function shareCert() {
+  const date  = document.getElementById('certDate').textContent;
+  const pool  = document.getElementById('certPool').textContent;
+  const ref   = document.getElementById('certRef').textContent;
+  const msg   = `I just locked my prediction — ${date} for "${pool}" on EPOCH GDX! ${ref} Join me at epochgdx.com`;
+  if (navigator.share) {
+    navigator.share({ title: 'My EPOCH GDX Prediction', text: msg }).catch(()=>{});
+  } else if (navigator.clipboard) {
+    navigator.clipboard.writeText(msg).then(() => showToast('Copied to clipboard — share with a friend!'));
+  } else {
+    showToast('Share: ' + msg.slice(0,60) + '…');
+  }
+}
+
 </script>
 
 <!-- SOCIALS PAGE -->
@@ -4678,43 +4680,6 @@ function initSocials(){if(_KInit)return;_KInit=true;kiRenderFeed();}
     <div id="kiFeed"></div>
 
   </div>
-
-  <!-- RIGHT PANEL -->
-  <aside class="ki-right-panel">
-    <div class="ki-rp-section">WHO TO FOLLOW</div>
-    <div class="ki-follow-card">
-      <div class="ki-follow-av" style="background:rgba(0,229,192,.15);color:#00E5C0;border:1.5px solid #00E5C0">CC</div>
-      <div class="ki-follow-info">
-        <div class="ki-follow-name">CryptoChad</div>
-        <div class="ki-follow-handle">@chadcrypto · <span style="color:#00E5C0">94% accuracy</span></div>
-      </div>
-      <button class="ki-follow-btn" onclick="showToast('Following CryptoChad')">Follow</button>
-    </div>
-    <div class="ki-follow-card">
-      <div class="ki-follow-av" style="background:rgba(26,110,255,.15);color:#1A6EFF;border:1.5px solid #1A6EFF">MT</div>
-      <div class="ki-follow-info">
-        <div class="ki-follow-name">MarketTitan</div>
-        <div class="ki-follow-handle">@markettitan · <span style="color:#00E5C0">88% accuracy</span></div>
-      </div>
-      <button class="ki-follow-btn" onclick="showToast('Following MarketTitan')">Follow</button>
-    </div>
-    <div class="ki-follow-card">
-      <div class="ki-follow-av" style="background:rgba(255,200,0,.1);color:#ffc800;border:1.5px solid #ffc800">SS</div>
-      <div class="ki-follow-info">
-        <div class="ki-follow-name">StargazerSam</div>
-        <div class="ki-follow-handle">@stargazer · <span style="color:#00E5C0">81% accuracy</span></div>
-      </div>
-      <button class="ki-follow-btn" onclick="showToast('Following StargazerSam')">Follow</button>
-    </div>
-
-    <div class="ki-rp-section" style="margin-top:28px">YOUR STATS</div>
-    <div class="ki-rp-stat-grid">
-      <div class="ki-rp-stat"><div class="ki-rp-stat-v">3</div><div class="ki-rp-stat-l">Active Entries</div></div>
-      <div class="ki-rp-stat"><div class="ki-rp-stat-v">2</div><div class="ki-rp-stat-l">Pools Joined</div></div>
-      <div class="ki-rp-stat"><div class="ki-rp-stat-v">32</div><div class="ki-rp-stat-l">GDX Tokens</div></div>
-      <div class="ki-rp-stat"><div class="ki-rp-stat-v">#412</div><div class="ki-rp-stat-l">Global Rank</div></div>
-    </div>
-  </aside>
 </div>
 
 <!-- FAB -->
@@ -4726,6 +4691,63 @@ function initSocials(){if(_KInit)return;_KInit=true;kiRenderFeed();}
 <div class="ki-lb" id="kiLb" onclick="kiCloseLb(event)">
   <button class="ki-lb-x" onclick="kiCloseLb()">&#x2715;</button>
   <img id="kiLbImg" src="" alt="">
+
+
+<!-- ═══════════════════════════════════
+     PREDICTION CERTIFICATE MODAL
+═══════════════════════════════════ -->
+<div id="certModal" style="position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:11000;display:none;align-items:center;justify-content:center;backdrop-filter:blur(10px);" onclick="if(event.target===this)closeCert()">
+  <div style="background:linear-gradient(150deg,#0a1428 0%,#060e1c 100%);border:1px solid rgba(0,229,192,.25);border-radius:20px;width:440px;max-width:94vw;overflow:hidden;box-shadow:0 0 80px rgba(0,229,192,.12),0 40px 80px rgba(0,0,0,.7);position:relative;">
+    <div style="height:2px;background:linear-gradient(90deg,transparent,#00E5C0 40%,#00E5C0 60%,transparent);"></div>
+    <div style="padding:36px 32px 30px;">
+
+      <!-- header -->
+      <div style="text-align:center;margin-bottom:26px;">
+        <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;color:#00E5C0;text-transform:uppercase;margin-bottom:10px;">Certificate of Prediction</div>
+        <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:3px;color:#fff;">EPOCH GDX</div>
+        <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,.3);margin-top:2px;">GLOBAL DATE EXCHANGE</div>
+      </div>
+
+      <!-- certificate body -->
+      <div style="border:1px solid rgba(0,229,192,.14);border-radius:12px;padding:22px;background:rgba(0,229,192,.03);margin-bottom:22px;text-align:center;">
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.5);letter-spacing:.5px;margin-bottom:8px;">This certifies a locked prediction of</div>
+        <div id="certDate" style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#00E5C0;line-height:1;">—</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.5);margin:8px 0;">for the pool</div>
+        <div id="certPool" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:18px;">—</div>
+        <div style="display:flex;justify-content:center;gap:0;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;">
+          <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
+            <div style="font-family:'Space Mono',monospace;font-size:13px;color:#00E5C0;">$10</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Entry Fee</div>
+          </div>
+          <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
+            <div id="certPrize" style="font-family:'Space Mono',monospace;font-size:13px;color:#00E5C0;">—</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Prize Pool</div>
+          </div>
+          <div style="flex:1;text-align:center;">
+            <div id="certRef" style="font-family:'Space Mono',monospace;font-size:11px;color:#00E5C0;">—</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Ref No.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- stamp -->
+      <div style="text-align:center;margin-bottom:22px;">
+        <svg width="52" height="52" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" style="opacity:.6;">
+          <circle cx="26" cy="26" r="24" fill="none" stroke="#00E5C0" stroke-width=".8" stroke-dasharray="3.5 2"/>
+          <circle cx="26" cy="26" r="18" fill="none" stroke="#00E5C0" stroke-width=".4" opacity=".5"/>
+          <text x="26" y="24" font-family="Bebas Neue,sans-serif" font-size="8" fill="#00E5C0" text-anchor="middle" letter-spacing="1.5">EPOCH</text>
+          <text x="26" y="33" font-family="Space Mono,monospace" font-size="5" fill="#00E5C0" text-anchor="middle" letter-spacing="1">GDX</text>
+        </svg>
+      </div>
+
+      <!-- buttons -->
+      <div style="display:flex;gap:10px;">
+        <button onclick="shareCert()" style="flex:1;padding:13px;background:rgba(0,229,192,.1);border:1px solid rgba(0,229,192,.3);border-radius:10px;color:#00E5C0;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;letter-spacing:.3px;transition:background .15s;" onmouseover="this.style.background='rgba(0,229,192,.2)'" onmouseout="this.style.background='rgba(0,229,192,.1)'">Share with a friend →</button>
+        <button onclick="closeCert()" style="padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">Done</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

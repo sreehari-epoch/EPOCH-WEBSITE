@@ -1023,8 +1023,10 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 /* Outer shell: left sidebar + center feed */
 .ki-shell {
   display:grid;
-  grid-template-columns:260px 1fr;
+  grid-template-columns:260px minmax(0,640px) 1fr;
   min-height:calc(100vh - 66px);
+  max-width:1280px;
+  margin:0 auto;
 }
 
 /* ── Left sidebar ── */
@@ -1284,11 +1286,54 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ki-lb img { max-width:90vw; max-height:90vh; border-radius:8px; object-fit:contain; }
 .ki-lb-x { position:absolute; top:16px; right:20px; background:rgba(255,255,255,.1); border:none; color:#fff; width:34px; height:34px; border-radius:50%; font-size:16px; cursor:pointer; display:flex; align-items:center; justify-content:center; }
 
+/* Right panel */
+.ki-right-panel {
+  padding:28px 20px;
+  position:sticky; top:66px; height:calc(100vh - 66px); overflow-y:auto;
+}
+.ki-right-panel::-webkit-scrollbar { width:2px; }
+.ki-right-panel::-webkit-scrollbar-thumb { background:#1a2540; }
+.ki-rp-section {
+  font-size:8.5px; letter-spacing:2.5px; text-transform:uppercase;
+  color:#3D4A5C; margin:0 0 14px;
+}
+.ki-follow-card {
+  display:flex; align-items:center; gap:10px;
+  padding:10px 0; border-bottom:1px solid #1a2540;
+}
+.ki-follow-card:last-of-type { border-bottom:none; }
+.ki-follow-av {
+  width:34px; height:34px; border-radius:50%; flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:11px; font-weight:700;
+}
+.ki-follow-info { flex:1; min-width:0; }
+.ki-follow-name { font-size:13px; font-weight:700; color:#C8D4E8; }
+.ki-follow-handle { font-size:10px; color:#7A8699; margin-top:2px; }
+.ki-follow-btn {
+  background:transparent; border:1px solid #2A3A55; color:#C8D4E8;
+  border-radius:20px; padding:5px 14px; font-size:11px; font-weight:600;
+  cursor:pointer; font-family:'DM Sans',sans-serif; transition:all .15s; flex-shrink:0;
+}
+.ki-follow-btn:hover { border-color:#00E5C0; color:#00E5C0; }
+.ki-rp-stat-grid {
+  display:grid; grid-template-columns:1fr 1fr; gap:1px;
+  background:#1a2540; border:1px solid #1a2540; border-radius:8px; overflow:hidden; margin-top:14px;
+}
+.ki-rp-stat { background:#0d1525; padding:14px 12px; }
+.ki-rp-stat-v { font-family:'Space Mono',monospace; font-size:17px; color:#00E5C0; line-height:1; margin-bottom:4px; }
+.ki-rp-stat-l { font-size:9px; letter-spacing:1px; text-transform:uppercase; color:#3D4A5C; }
+
 /* Responsive */
+@media (max-width:1100px) {
+  .ki-shell { grid-template-columns:260px minmax(0,640px); }
+  .ki-right-panel { display:none; }
+}
 @media (max-width:900px) {
-  .ki-shell { grid-template-columns:1fr; }
+  .ki-shell { grid-template-columns:1fr; max-width:100%; }
   .ki-sidebar { display:none; }
   .ki-feed-col { max-width:100%; border-right:none; }
+  .ki-right-panel { display:none; }
 }
 
 </style>
@@ -4678,6 +4723,43 @@ function shareCert() {
     <div id="kiFeed"></div>
 
   </div>
+
+  <!-- Right panel -->
+  <aside class="ki-right-panel">
+    <div class="ki-rp-section">WHO TO FOLLOW</div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(0,229,192,.15);color:#00E5C0;border:1.5px solid #00E5C0">CC</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">CryptoChad</div>
+        <div class="ki-follow-handle">@chadcrypto · <span style="color:#00E5C0">94% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following CryptoChad')">Follow</button>
+    </div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(26,110,255,.15);color:#1A6EFF;border:1.5px solid #1A6EFF">MT</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">MarketTitan</div>
+        <div class="ki-follow-handle">@markettitan · <span style="color:#00E5C0">88% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following MarketTitan')">Follow</button>
+    </div>
+    <div class="ki-follow-card">
+      <div class="ki-follow-av" style="background:rgba(255,200,0,.1);color:#ffc800;border:1.5px solid #ffc800">SS</div>
+      <div class="ki-follow-info">
+        <div class="ki-follow-name">StargazerSam</div>
+        <div class="ki-follow-handle">@stargazer · <span style="color:#00E5C0">81% accuracy</span></div>
+      </div>
+      <button class="ki-follow-btn" onclick="showToast('Following StargazerSam')">Follow</button>
+    </div>
+    <div class="ki-rp-section" style="margin-top:28px;">YOUR STATS</div>
+    <div class="ki-rp-stat-grid">
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">3</div><div class="ki-rp-stat-l">Active Entries</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">2</div><div class="ki-rp-stat-l">Pools Joined</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">32</div><div class="ki-rp-stat-l">GDX Tokens</div></div>
+      <div class="ki-rp-stat"><div class="ki-rp-stat-v">#412</div><div class="ki-rp-stat-l">Global Rank</div></div>
+    </div>
+  </aside>
+
 </div>
 
 <!-- FAB -->

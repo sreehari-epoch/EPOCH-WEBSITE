@@ -10,7 +10,7 @@
    TOKENS
 ───────────────────────────────────── */
 :root {
-  --bg:       #040810;
+  --bg:       #0b1220;
   --bg2:      #07101e;
   --teal:     #00E5C0;
   --teal2:    #00B89A;
@@ -18,12 +18,12 @@
   --tg2:      rgba(0,229,192,0.06);
   --blue:     #1A6EFF;
   --white:    #ffffff;
-  --muted:    rgba(255,255,255,0.72);
+  --muted:    rgba(255,255,255,0.88);
   --bdr:      rgba(255,255,255,0.07);
   --bdt:      rgba(0,229,192,0.22);
   --card:     rgba(255,255,255,0.03);
   --cardh:    rgba(0,229,192,0.05);
-  --panel-bg: rgba(8,15,28,0.92);
+  --panel-bg: rgba(12,20,38,0.95);
   --panel-bd: rgba(0,229,192,0.18);
   --fd: 'Bebas Neue', sans-serif;
   --fb: 'DM Sans', sans-serif;
@@ -103,7 +103,7 @@ nav {
 .nav-links { display:flex; align-items:center; gap:36px; list-style:none; }
 .nav-links a {
   font-family: var(--fm); font-size: 9.5px; letter-spacing: 2px;
-  color: var(--muted); text-decoration: none;
+  color: rgba(255,255,255,0.92); text-decoration: none;
   transition: color .2s; cursor: pointer; text-transform: uppercase;
 }
 .nav-links a:hover,
@@ -595,7 +595,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .tnc-body::-webkit-scrollbar-thumb { background:var(--bdt); }
 .tnc-section-title { font-family:var(--fm); font-size:8px; letter-spacing:2px; color:var(--teal); text-transform:uppercase; margin-bottom:8px; margin-top:18px; }
 .tnc-section-title:first-child { margin-top:0; }
-.tnc-text { font-family:var(--fb); font-size:12px; line-height:1.75; color:rgba(255,255,255,.55); }
+.tnc-text { font-family:var(--fb); font-size:12px; line-height:1.75; color:rgba(255,255,255,.87); }
 .tnc-footer {
   padding:16px 24px; border-top:1px solid var(--bdr);
   display:flex; align-items:center; justify-content:space-between; gap:14px;
@@ -773,31 +773,31 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .sub-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:9999;display:none;align-items:center;justify-content:center;backdrop-filter:blur(6px);}
 .sub-modal-overlay.open{display:flex;}
 .sub-modal{background:#0d1117;border:1px solid rgba(255,255,255,.1);border-radius:20px;width:460px;max-width:96vw;padding:36px 32px;position:relative;box-shadow:0 0 80px rgba(0,229,192,.08);}
-.sub-close{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,.5);font-size:22px;cursor:pointer;line-height:1;padding:2px 6px;}
+.sub-close{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(255,255,255,.85);font-size:22px;cursor:pointer;line-height:1;padding:2px 6px;}
 .sub-close:hover{color:#fff;}
 .sub-back{background:none;border:none;color:var(--teal);font-size:13px;cursor:pointer;margin-bottom:16px;padding:0;letter-spacing:1px;}
 .sub-step{display:none;}
 .sub-step.active{display:block;}
 .sub-icon{font-size:36px;text-align:center;margin-bottom:12px;}
 .sub-title{font-family:var(--fd);font-size:24px;letter-spacing:3px;text-align:center;margin-bottom:8px;}
-.sub-desc{font-family:var(--fm);font-size:13px;color:rgba(255,255,255,.5);text-align:center;margin-bottom:24px;line-height:1.7;}
+.sub-desc{font-family:var(--fm);font-size:13px;color:rgba(255,255,255,.85);text-align:center;margin-bottom:24px;line-height:1.7;}
 .sub-plan-cards{display:flex;gap:12px;margin-bottom:22px;}
 .sub-plan{flex:1;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:16px;cursor:pointer;position:relative;text-align:center;transition:border-color .2s;}
 .sub-plan.selected{border-color:var(--teal);background:rgba(0,229,192,.05);}
 .sub-plan-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--teal);color:#000;font-size:9px;letter-spacing:2px;padding:2px 8px;border-radius:20px;font-family:var(--fm);font-weight:700;}
 .sub-plan-name{font-family:var(--fm);font-size:12px;letter-spacing:2px;color:rgba(255,255,255,.6);margin-bottom:6px;}
 .sub-plan-price{font-family:var(--fd);font-size:28px;letter-spacing:2px;}
-.sub-plan-price span{font-size:13px;color:rgba(255,255,255,.5);font-family:var(--fm);}
+.sub-plan-price span{font-size:13px;color:rgba(255,255,255,.85);font-family:var(--fm);}
 .sub-kyc-wrap { margin-top:14px; }
-.sub-kyc-label { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.5); margin-bottom:6px; font-family:var(--fm); }
+.sub-kyc-label { font-size:9px; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,.85); margin-bottom:6px; font-family:var(--fm); }
 .sub-kyc-upload { display:block; padding:11px 16px; background:rgba(255,255,255,.04); border:1px dashed rgba(255,255,255,.18); border-radius:8px; cursor:pointer; font-family:var(--fm); font-size:12px; color:rgba(255,255,255,.6); text-align:center; transition:border-color .15s; }
 .sub-kyc-upload:hover { border-color:var(--teal); color:var(--teal); }
 .sub-kyc-hint { font-size:9px; color:rgba(255,255,255,.32); margin-top:5px; text-align:center; font-family:var(--fm); }
 .sub-form{display:flex;flex-direction:column;gap:10px;margin-bottom:20px;}
 .sub-input{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;color:#fff;font-family:var(--fm);font-size:13px;outline:none;transition:border-color .2s;}
 .sub-input:focus{border-color:var(--teal);}
-.sub-input::placeholder{color:rgba(255,255,255,.3);}
-.sub-check-label{font-family:var(--fm);font-size:12px;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:8px;cursor:pointer;}
+.sub-input::placeholder{color:rgba(255,255,255,.70);}
+.sub-check-label{font-family:var(--fm);font-size:12px;color:rgba(255,255,255,.85);display:flex;align-items:center;gap:8px;cursor:pointer;}
 .sub-btn{width:100%;background:var(--teal);color:#000;border:none;border-radius:10px;padding:14px;font-family:var(--fd);font-size:16px;letter-spacing:2px;cursor:pointer;transition:opacity .2s;}
 .sub-btn:hover{opacity:.85;}
 /* Payment */
@@ -805,8 +805,8 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .pay-card-preview{background:linear-gradient(135deg,#1a2a3a,#0d1b2a);border:1px solid rgba(0,229,192,.2);border-radius:14px;padding:20px;margin-bottom:20px;position:relative;overflow:hidden;}
 .pay-chip{width:30px;height:22px;background:linear-gradient(135deg,#c8a96e,#9a7a45);border-radius:4px;margin-bottom:16px;}
 .pay-card-num{font-family:var(--fmm, 'Space Mono'),monospace;font-size:16px;letter-spacing:3px;margin-bottom:14px;color:rgba(255,255,255,.9);}
-.pay-card-row{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.5);}
-.pay-secure-note{font-family:var(--fm);font-size:11px;color:rgba(255,255,255,.3);text-align:center;margin-top:10px;letter-spacing:1px;}
+.pay-card-row{display:flex;justify-content:space-between;font-family:var(--fm);font-size:11px;letter-spacing:2px;color:rgba(255,255,255,.85);}
+.pay-secure-note{font-family:var(--fm);font-size:11px;color:rgba(255,255,255,.70);text-align:center;margin-top:10px;letter-spacing:1px;}
 .pay-btn{position:relative;}
 /* Success */
 .sub-success-icon{width:64px;height:64px;border-radius:50%;background:rgba(0,229,192,.15);border:2px solid var(--teal);display:flex;align-items:center;justify-content:center;font-size:28px;color:var(--teal);margin:0 auto 16px;}
@@ -899,9 +899,9 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ks-post-name {
   font-family:var(--fm); font-size:13px; font-weight:700; color:var(--white);
 }
-.ks-post-handle { font-size:12px; color:rgba(255,255,255,.35); }
+.ks-post-handle { font-size:12px; color:rgba(255,255,255,.75); }
 .ks-post-dot { color:rgba(255,255,255,.2); font-size:10px; }
-.ks-post-time { font-size:11px; color:rgba(255,255,255,.3); }
+.ks-post-time { font-size:11px; color:rgba(255,255,255,.70); }
 .ks-post-badge {
   margin-left:auto; font-family:var(--fm); font-size:8px;
   letter-spacing:1.5px; text-transform:uppercase;
@@ -932,7 +932,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
   font-size:20px; flex-shrink:0; background:rgba(0,0,0,.3);
 }
 .ks-pred-card-title { font-family:var(--fd); font-size:14px; letter-spacing:.5px; line-height:1.2; }
-.ks-pred-card-sub { font-size:10px; color:rgba(255,255,255,.4); margin-top:2px; }
+.ks-pred-card-sub { font-size:10px; color:rgba(255,255,255,.78); margin-top:2px; }
 .ks-pred-card-bot {
   display:flex; align-items:center; gap:10px;
   padding:10px 14px;
@@ -940,7 +940,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ks-pred-card-choice {
   font-family:var(--fm); font-size:12px; font-weight:700; color:var(--teal);
 }
-.ks-pred-card-arrow { font-size:10px; color:rgba(255,255,255,.3); }
+.ks-pred-card-arrow { font-size:10px; color:rgba(255,255,255,.70); }
 .ks-pred-card-pct { font-family:var(--fm); font-size:13px; font-weight:700; color:var(--white); }
 .ks-pred-card-bar {
   flex:1; height:4px; background:rgba(255,255,255,.08); border-radius:2px; overflow:hidden;
@@ -966,7 +966,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
 .ks-acts { display:flex; align-items:center; gap:2px; margin-top:4px; }
 .ks-act {
   display:flex; align-items:center; gap:5px;
-  background:none; border:none; color:rgba(255,255,255,.3);
+  background:none; border:none; color:rgba(255,255,255,.70);
   font-size:12px; cursor:pointer; padding:6px 10px; border-radius:20px;
   transition:all .15s; font-family:var(--fm);
 }
@@ -1439,7 +1439,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
         <span class="eng-cd-num" id="cdHrs">14</span><span class="eng-cd-sep">h</span>
         <span class="eng-cd-num" id="cdMin">32</span><span class="eng-cd-sep">m</span>
         <span class="eng-cd-num" id="cdSec">00</span><span class="eng-cd-sep">s</span>
-        <span style="color:rgba(255,255,255,.3);margin-left:2px;">· Bitcoin Hits $100K</span>
+        <span style="color:rgba(255,255,255,.70);margin-left:2px;">· Bitcoin Hits $100K</span>
       </div>
     </div>
 
@@ -2202,7 +2202,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
             <div style="font-family:var(--fd);font-size:28px;color:var(--white);">$102,400</div>
           </div>
           <div style="text-align:right;">
-            <div class="wal-$" style="color:rgba(255,255,255,.5);">Lifetime winnings</div>
+            <div class="wal-$" style="color:rgba(255,255,255,.85);">Lifetime winnings</div>
             <div class="wal-lbl">withdrawable</div>
           </div>
         </div>
@@ -2802,7 +2802,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
   <div id="dpYear" style="display:none;">
     <div id="dpYearList"></div>
     <div style="padding:8px 12px 10px;border-top:1px solid rgba(255,255,255,.07);">
-      <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,.4);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;">Or type a year</div>
+      <div style="font-family:'Space Mono',monospace;font-size:7px;color:rgba(255,255,255,.78);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px;">Or type a year</div>
       <input id="dpYearInput" type="number" placeholder="e.g. 2031" min="2025" max="2099"
         oninput="dpTypeYear(this.value)"
         style="width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:5px;padding:7px 10px;font-family:'Space Mono',monospace;font-size:11px;color:#fff;outline:none;letter-spacing:1px;"/>
@@ -2837,28 +2837,28 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
         <div style="font-family:var(--fd);font-size:80px;color:rgba(0,229,192,.04);position:absolute;top:-10px;right:12px;line-height:1;pointer-events:none;">01</div>
         <div style="width:36px;height:36px;border:1px solid var(--bdt);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:16px;margin-bottom:16px;">◉</div>
         <div style="font-family:var(--fd);font-size:20px;letter-spacing:1px;margin-bottom:10px;">CHOOSE YOUR POOL</div>
-        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.5);">Browse 9 active prediction markets across Digital Assets, Finance, Technology, Space, and Global Statistics. Each pool has its own prize jackpot and entry window.</p>
+        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);">Browse 9 active prediction markets across Digital Assets, Finance, Technology, Space, and Global Statistics. Each pool has its own prize jackpot and entry window.</p>
       </div>
 
       <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:28px;position:relative;overflow:hidden;">
         <div style="font-family:var(--fd);font-size:80px;color:rgba(0,229,192,.04);position:absolute;top:-10px;right:12px;line-height:1;pointer-events:none;">02</div>
         <div style="width:36px;height:36px;border:1px solid var(--bdt);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:16px;margin-bottom:16px;">⊕</div>
         <div style="font-family:var(--fd);font-size:20px;letter-spacing:1px;margin-bottom:10px;">SPIN THE PREDICTION WHEEL</div>
-        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.5);">Move the Dial to the year you believe the event will occur. Optionally narrow it down to a specific day and month using the date picker below the wheel for a more precise — and rewarding — prediction.</p>
+        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);">Move the Dial to the year you believe the event will occur. Optionally narrow it down to a specific day and month using the date picker below the wheel for a more precise — and rewarding — prediction.</p>
       </div>
 
       <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:28px;position:relative;overflow:hidden;">
         <div style="font-family:var(--fd);font-size:80px;color:rgba(0,229,192,.04);position:absolute;top:-10px;right:12px;line-height:1;pointer-events:none;">03</div>
         <div style="width:36px;height:36px;border:1px solid var(--bdt);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:16px;margin-bottom:16px;">◈</div>
         <div style="font-family:var(--fd);font-size:20px;letter-spacing:1px;margin-bottom:10px;">LOCK YOUR ENTRY</div>
-        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.5);">Each entry costs a flat <strong style="color:var(--white);">$10</strong>. You can submit up to 3 entries per pool with different dates. Subscribers get up to 6 entries per pool. Entries are final once confirmed.</p>
+        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);">Each entry costs a flat <strong style="color:var(--white);">$10</strong>. You can submit up to 3 entries per pool with different dates. Subscribers get up to 6 entries per pool. Entries are final once confirmed.</p>
       </div>
 
       <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:28px;position:relative;overflow:hidden;">
         <div style="font-family:var(--fd);font-size:80px;color:rgba(0,229,192,.04);position:absolute;top:-10px;right:12px;line-height:1;pointer-events:none;">04</div>
         <div style="width:36px;height:36px;border:1px solid var(--bdt);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--teal);font-size:16px;margin-bottom:16px;">⬟</div>
         <div style="font-family:var(--fd);font-size:20px;letter-spacing:1px;margin-bottom:10px;">CLAIM YOUR JACKPOT</div>
-        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.5);">Once the milestone occurs, EPOCH's independent data panel verifies the exact date. Prizes are distributed automatically to the jackpot winner and proximity tier winners.</p>
+        <p style="font-size:13px;line-height:1.7;color:rgba(255,255,255,.85);">Once the milestone occurs, EPOCH's independent data panel verifies the exact date. Prizes are distributed automatically to the jackpot winner and proximity tier winners.</p>
       </div>
 
     </div>
@@ -2871,17 +2871,17 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
         <div style="background:rgba(0,229,192,.05);border:1px solid rgba(0,229,192,.15);border-radius:8px;padding:20px;">
           <div style="font-family:var(--fd);font-size:11px;letter-spacing:2px;color:var(--teal);margin-bottom:10px;">SCENARIO A</div>
           <div style="font-family:var(--fd);font-size:16px;color:var(--white);margin-bottom:8px;">Exact Date Winner</div>
-          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);">Exact date winner(s) split the <strong style="color:var(--white);">full prize pool equally</strong>. Platform rake is 30%, deducted upfront. Winners split 100% of the prize pool (70% of gross + $10,000 house seed).</p>
+          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);">Exact date winner(s) split the <strong style="color:var(--white);">full prize pool equally</strong>. Platform rake is 30%, deducted upfront. Winners split 100% of the prize pool (70% of gross + $10,000 house seed).</p>
         </div>
         <div style="background:rgba(74,158,255,.05);border:1px solid rgba(74,158,255,.15);border-radius:8px;padding:20px;">
           <div style="font-family:var(--fd);font-size:11px;letter-spacing:2px;color:#4A9EFF;margin-bottom:10px;">SCENARIO B</div>
           <div style="font-family:var(--fd);font-size:16px;color:var(--white);margin-bottom:8px;">No Exact Winner</div>
-          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);">Pool splits in half. <strong style="color:var(--white);">50%</strong> distributed to Tier 1 (±3d), Tier 2 (±7d), Tier 3 (±14d) in priority order. <strong style="color:var(--white);">50%</strong> rolls over to active pools. Closer tiers take priority.</p>
+          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);">Pool splits in half. <strong style="color:var(--white);">50%</strong> distributed to Tier 1 (±3d), Tier 2 (±7d), Tier 3 (±14d) in priority order. <strong style="color:var(--white);">50%</strong> rolls over to active pools. Closer tiers take priority.</p>
         </div>
         <div style="background:rgba(168,85,247,.05);border:1px solid rgba(168,85,247,.15);border-radius:8px;padding:20px;">
           <div style="font-family:var(--fd);font-size:11px;letter-spacing:2px;color:#A855F7;margin-bottom:10px;">SCENARIO C</div>
           <div style="font-family:var(--fd);font-size:16px;color:var(--white);margin-bottom:8px;">Jackpot Carry</div>
-          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.5);">No winner within ±14 days. Full prize pool converts to <strong style="color:var(--white);">GDX Tokens</strong> returned to all participants. 1 entry = 1 token ($10 value), valid for 90 days.</p>
+          <p style="font-size:12px;line-height:1.7;color:rgba(255,255,255,.85);">No winner within ±14 days. Full prize pool converts to <strong style="color:var(--white);">GDX Tokens</strong> returned to all participants. 1 entry = 1 token ($10 value), valid for 90 days.</p>
         </div>
       </div>
     </div>
@@ -2921,7 +2921,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
       <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:28px;">
         <div style="font-family:var(--fm);font-size:8px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;">GDX Token System</div>
-        <div style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.55);">
+        <div style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.87);">
           ✦ Subscribers receive 12 GDX Tokens on sign-up<br>
           ✦ Each token = 1 free entry credit ($10 value)<br>
           ✦ Tokens are earned by close predictions<br>
@@ -2932,7 +2932,7 @@ footer { border-top:1px solid var(--bdr); padding:36px 48px; display:flex; justi
       </div>
       <div style="background:var(--bg2);border:1px solid var(--bdr);border-radius:10px;padding:28px;">
         <div style="font-family:var(--fm);font-size:8px;letter-spacing:3px;color:var(--teal);text-transform:uppercase;margin-bottom:14px;">General Rules</div>
-        <div style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.55);">
+        <div style="font-size:13px;line-height:1.9;color:rgba(255,255,255,.87);">
           ✦ Must be 18+ to participate<br>
           ✦ $10 flat entry fee per prediction<br>
           ✦ Up to 3 entries per pool (6 for subscribers)<br>
@@ -3523,7 +3523,7 @@ function dpRenderDay() {
   // Weekday headers
   ['SU','MO','TU','WE','TH','FR','SA'].forEach(d => {
     const h = document.createElement('div');
-    h.style.cssText = 'font-family:"Space Mono",monospace;font-size:7px;color:rgba(255,255,255,.4);text-align:center;padding:3px 0;letter-spacing:.5px;';
+    h.style.cssText = 'font-family:"Space Mono",monospace;font-size:7px;color:rgba(255,255,255,.78);text-align:center;padding:3px 0;letter-spacing:.5px;';
     h.textContent = d;
     grid.appendChild(h);
   });
@@ -4781,25 +4781,25 @@ function shareCert() {
       <div style="text-align:center;margin-bottom:26px;">
         <div style="font-family:'Space Mono',monospace;font-size:8px;letter-spacing:3px;color:#00E5C0;text-transform:uppercase;margin-bottom:10px;">Certificate of Prediction</div>
         <div style="font-family:'Bebas Neue',sans-serif;font-size:34px;letter-spacing:3px;color:#fff;">EPOCH GDX</div>
-        <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,.3);margin-top:2px;">GLOBAL DATE EXCHANGE</div>
+        <div style="font-family:'Space Mono',monospace;font-size:7px;letter-spacing:2px;color:rgba(255,255,255,.70);margin-top:2px;">GLOBAL DATE EXCHANGE</div>
       </div>
       <div style="border:1px solid rgba(0,229,192,.14);border-radius:12px;padding:22px;background:rgba(0,229,192,.03);margin-bottom:22px;text-align:center;">
-        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.5);margin-bottom:8px;">This certifies a locked prediction of</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.85);margin-bottom:8px;">This certifies a locked prediction of</div>
         <div id="certDate" style="font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:2px;color:#00E5C0;line-height:1;">—</div>
-        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.5);margin:8px 0;">for the pool</div>
+        <div style="font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,.85);margin:8px 0;">for the pool</div>
         <div id="certPool" style="font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:18px;">—</div>
         <div style="display:flex;justify-content:center;border-top:1px solid rgba(255,255,255,.08);padding-top:16px;">
           <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
             <div style="font-family:'Space Mono',monospace;font-size:13px;color:#00E5C0;">$10</div>
-            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Entry Fee</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;margin-top:3px;">Entry Fee</div>
           </div>
           <div style="flex:1;text-align:center;border-right:1px solid rgba(255,255,255,.08);">
             <div id="certPrize" style="font-family:'Space Mono',monospace;font-size:13px;color:#00E5C0;">—</div>
-            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Prize Pool</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;margin-top:3px;">Prize Pool</div>
           </div>
           <div style="flex:1;text-align:center;">
             <div id="certRef" style="font-family:'Space Mono',monospace;font-size:11px;color:#00E5C0;">—</div>
-            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.35);font-family:'DM Sans',sans-serif;margin-top:3px;">Ref No.</div>
+            <div style="font-size:8px;letter-spacing:1px;text-transform:uppercase;color:rgba(255,255,255,.75);font-family:'DM Sans',sans-serif;margin-top:3px;">Ref No.</div>
           </div>
         </div>
       </div>
@@ -4813,7 +4813,7 @@ function shareCert() {
       </div>
       <div style="display:flex;gap:10px;">
         <button onclick="shareCert()" style="flex:1;padding:13px;background:rgba(0,229,192,.1);border:1px solid rgba(0,229,192,.3);border-radius:10px;color:#00E5C0;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:background .15s;" onmouseover="this.style.background='rgba(0,229,192,.2)'" onmouseout="this.style.background='rgba(0,229,192,.1)'">Share with a friend →</button>
-        <button onclick="closeCert()" style="padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.5);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">Done</button>
+        <button onclick="closeCert()" style="padding:13px 20px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:rgba(255,255,255,.85);font-family:'DM Sans',sans-serif;font-size:13px;cursor:pointer;" onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='rgba(255,255,255,.04)'">Done</button>
       </div>
     </div>
   </div>
